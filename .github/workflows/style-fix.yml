@@ -1,0 +1,30 @@
+name: Auto-fix style
+
+on:
+  push:
+    branches: [main]
+    paths: ["Casks/**", "Formula/**"]
+
+permissions:
+  contents: write
+
+jobs:
+  style-fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: Homebrew/actions/setup-homebrew@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fix style
+        run: brew style --fix kkd16/tap || true
+
+      - name: Commit fixes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Auto-fix Homebrew style"
+          git push
