@@ -1,5 +1,5 @@
 class Evict < Formula
-  desc "Kill whatever process is using a given port."
+  desc "Kill whatever process is using a given port"
   homepage "https://github.com/kkd16/evict"
   version "1.0.0"
   license "MIT"
