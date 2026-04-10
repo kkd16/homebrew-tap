@@ -1,17 +1,15 @@
 class Evict < Formula
   desc "Kill whatever process is using a given port"
   homepage "https://github.com/kkd16/evict"
-  version "2.0.0"
+  version "3.0.0"
   license "MIT"
 
-  on_macos do
-    url "https://github.com/kkd16/evict/releases/download/v2.0.0/evict-macos-arm"
-    sha256 "65f5b25410176a61d3fdbd832e7a3dbe7e9f034f6d0f584207a7a21b102dfd11"
-  end
-
-  on_linux do
-    url "https://github.com/kkd16/evict/releases/download/v2.0.0/evict-linux-amd64"
-    sha256 "2610f9deec13d7a0556a65fb55cd7b31e3124d4f1b9e649290608608b097b8b8"
+  if OS.mac?
+    url "https://github.com/kkd16/evict/releases/download/v#{version}/evict-macos-arm"
+    sha256 "92bb9402e1ab16da09de3317c78c1cd6de9d8ada29d2d81f637f0a45a217bbbb"
+  elsif OS.linux?
+    url "https://github.com/kkd16/evict/releases/download/v#{version}/evict-linux-amd64"
+    sha256 "9638e213fb1b162513345ff813bee617ae90be42545c1bc9a0c6421d5de48f0d"
   end
 
   def install
