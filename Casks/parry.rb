@@ -4,23 +4,23 @@ cask "parry" do
 
   on_macos do
     on_intel do
-      url "https://github.com/kkd16/parry/releases/download/v#{version}/parry_Darwin_x86_64.tar.gz"
       sha256 "aedbeb5fae3aefb7a7ac620368e10a05ba97b56537307815a778a68068e45ad8"
+      url "https://github.com/kkd16/parry/releases/download/v#{version}/parry_Darwin_x86_64.tar.gz"
     end
     on_arm do
-      url "https://github.com/kkd16/parry/releases/download/v#{version}/parry_Darwin_arm64.tar.gz"
       sha256 "90f07e578e446a0a8ba6eca1b65a3b6b319de4d0f3fd0a3f4e2057d7c92490b2"
+      url "https://github.com/kkd16/parry/releases/download/v#{version}/parry_Darwin_arm64.tar.gz"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/kkd16/parry/releases/download/v#{version}/parry_Linux_x86_64.tar.gz"
       sha256 "f1380cc70f6ab565813fed3725fb555696e9d75999f5edb0533cbea0a7feba16"
+      url "https://github.com/kkd16/parry/releases/download/v#{version}/parry_Linux_x86_64.tar.gz"
     end
     on_arm do
-      url "https://github.com/kkd16/parry/releases/download/v#{version}/parry_Linux_arm64.tar.gz"
       sha256 "bff8b69de98b12819e91d653c75fae569ae58db0007a43152370447fce64adc7"
+      url "https://github.com/kkd16/parry/releases/download/v#{version}/parry_Linux_arm64.tar.gz"
     end
   end
 
@@ -35,5 +35,4 @@ cask "parry" do
   binary "parry"
 
   # No zap stanza required
-
 end
