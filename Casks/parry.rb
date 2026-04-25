@@ -35,5 +35,4 @@ cask "parry" do
   binary "parry"
 
   # No zap stanza required
-
 end
